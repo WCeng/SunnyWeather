@@ -6,7 +6,7 @@ data class PlaceResponse(val status: String, val places: List<Place>)
 
 data class Place(
     val name: String,
-    val locations: List<Location>,
+    val location: Location,
     @SerializedName("formatted_address") val address: String
 )
 

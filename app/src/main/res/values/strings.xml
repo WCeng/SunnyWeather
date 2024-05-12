@@ -2,4 +2,6 @@
     <string name="app_name">SunnyWeather</string>
     <string name="input_place">输入城市</string>
     <string name="notAnyPlacesForQuery">未查询到任何地点</string>
+    <string name="not_weather_info_for_get">无法成功获取天气信息</string>
+    <string name="air_pm">空气指数</string>
 </resources>
