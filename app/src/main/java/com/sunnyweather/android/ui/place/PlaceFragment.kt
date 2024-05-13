@@ -10,7 +10,6 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -73,7 +72,9 @@ class PlaceFragment : Fragment() {
             }
         }
 
-        viewModel.placeLiveData.observe(viewLifecycleOwner, Observer { result ->
+        viewModel.placeLiveData.observe(viewLifecycleOwner) { result ->
+            if (placeInput.text.isEmpty()) return@observe
+
             val places = result.getOrNull()
             if (places != null) {
                 viewModel.placeList.clear()
@@ -89,6 +90,6 @@ class PlaceFragment : Fragment() {
                 ).show()
                 result.exceptionOrNull()?.printStackTrace()
             }
-        })
+        }
     }
 }

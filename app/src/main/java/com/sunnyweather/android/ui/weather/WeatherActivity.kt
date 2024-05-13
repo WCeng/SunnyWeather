@@ -40,7 +40,7 @@ class WeatherActivity : AppCompatActivity() {
     private lateinit var weatherLayout: ScrollView
     private lateinit var swipeRefresh: SwipeRefreshLayout
     lateinit var drawerLayout: DrawerLayout
-    private lateinit var navBtn: Button
+    private lateinit var navBtn: ImageView
 
 
     val viewModel by lazy {
